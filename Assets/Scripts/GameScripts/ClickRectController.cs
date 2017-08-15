@@ -21,6 +21,7 @@ public class ClickRectController : MonoBehaviour {
 
 	private Transform myTrans;
 	private SpriteRenderer myspriteRend;
+	private ParticleSystem myPartSys;
 
 	private static float rectSideLength = 2.8f;
 
@@ -29,6 +30,7 @@ public class ClickRectController : MonoBehaviour {
 	{
 		myTrans = GetComponent<Transform> ();
 		myspriteRend = GetComponent<SpriteRenderer> ();
+		myPartSys = gameObject.GetComponentsInChildren<ParticleSystem> ()[0];
 
 		//text shiet
 		pointsCounterText.text = points.ToString ();
@@ -67,7 +69,12 @@ public class ClickRectController : MonoBehaviour {
 	private void NewRect() 
 	{
 		//instantiate new rect
-		Instantiate(clickRectPrefab, NextRectPos(), new Quaternion());
+		Vector3 nextRectPos = NextRectPos();
+		Instantiate(clickRectPrefab, nextRectPos, new Quaternion());
+
+		//spawn particles
+		myPartSys.transform.position = nextRectPos;
+		myPartSys.Play();
 
 		//destroy this script
 		Destroy(GetComponent<ClickRectController>());
