@@ -1,8 +1,4 @@
-/[Ll]ibrary/
 /[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
 
 /Assets/AssetStoreTools*
 /Assets/Editor/GitHub.meta
@@ -15,8 +11,6 @@
 ExportedObj/
 .consulo/
 *.csproj
-*.unityproj
-*.sln
 *.suo
 *.tmp
 *.user
@@ -24,7 +18,7 @@ ExportedObj/
 *.pidb
 *.booproj
 *.svd
-*.pdb
+
 
 
 # Unity3D generated meta files
@@ -34,5 +28,4 @@ ExportedObj/
 sysinfo.txt
 
 # Builds
-*.apk
 *.unitypackage
